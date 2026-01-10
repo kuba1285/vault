@@ -3,6 +3,38 @@
     "name": "Google検索",
     "code": "javascript:(function(){const q=window.getSelection().toString()||prompt('検索:');if(q)window.open('https://www.google.com/search?q='+encodeURIComponent(q))})();"
   },
+  "fi": {
+    "name": "fetch_all_image",
+    "code": "javascript:((o,p,u,i,v,e)=>{function imgLoad(){if(this.width){/* dataset.dimをセット */ this.par.nextSibling.dataset.dim=this.width + 'x' + this.height;}else{/* クラス名を一致させる */ this.par.nextSibling.classList.add('error');}}if(window.itl_ujs)return itl_ujs.remove();/* 画像URLの抽出 */ u=new Set();Array.from(document.all).forEach(e=>{if(e.tagName==='IMG' && e.src)u.add(e.src);const style=getComputedStyle(e);const props=['background-image','border-image-source','content','cursor','filter','list-style-image','mask-image','offset-path'];props.forEach(k=>{const match=style[k].match(/\\burl\\(['']?(.*?)['']?\\)/);if(match)u.add(match[1]);});});/* Shadow DOMの構築 */ p=document.createElement('DIV');p.id='itl_ujs';document.body.appendChild(p);o=p.attachShadow({mode:'open'});o.innerHTML=` <style> #veil{position: fixed;left: 0;top: 0;width: 100vw;height: 100vh;background: rgba(0,0,0,0.5);z-index: 999999;cursor: pointer;display: flex;align-items: center;justify-content: center;}#list{box-sizing: border-box;width: 90vw;height: 90vh;background: #fff;border: 5px solid #007;border-radius: 8px;overflow-y: scroll;display: flex;flex-wrap: wrap;align-content: flex-start;padding: 10px;cursor: auto;}#list a{display: block;position: relative;width: calc(20% - 10px);margin: 5px;box-sizing: border-box;text-decoration: none;color: #333;font-family: sans-serif;background: #f9f9f9;}#list a:hover{background: #edf2ff;}#list img{width: 100%;height: 150px;object-fit: contain;display: block;}#list div{font-size: 10px;height: 3em;overflow: hidden;word-break: break-all;padding: 2px;text-align: center;}/* サイズ情報の表示ラベル */ #list div[data-dim]::before{content: attr(data-dim);position: absolute;top: 0;right: 0;background: rgba(0,0,0,0.7);color: #fff;padding: 2px 4px;font-size: 9px;}/* エラー時の表示 */ #list div.error::before{content: 'LOAD ERROR';position: absolute;top: 0;right: 0;background: #c00;color: #fff;padding: 2px 4px;font-size: 9px;}</style> <div id='veil'><div id='list'></div></div>`;p=o.lastChild.lastChild;u.forEach(url=>{const a=document.createElement('A');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.innerHTML='<img><div></div>';const imgTag=a.firstChild;const infoDiv=a.lastChild;infoDiv.textContent=url.split('/').pop()|| url;const loader=new Image();loader.par=imgTag;loader.onload=imgLoad;loader.onerror=imgLoad;loader.src=url;imgTag.src=url;p.appendChild(a);});o.firstChild.nextSibling.onclick=function(ev){if(ev.target===this)document.getElementById('itl_ujs').remove();};})();void(0);"
+  },
+  "": {
+    "name": "",
+    "code": ""
+  },
+  "": {
+    "name": "",
+    "code": ""
+  },
+  "": {
+    "name": "",
+    "code": ""
+  },
+  "": {
+    "name": "",
+    "code": ""
+  },
+  "": {
+    "name": "",
+    "code": ""
+  },
+  "": {
+    "name": "",
+    "code": ""
+  },
+  "": {
+    "name": "",
+    "code": ""
+  },
   "": {
     "name": "",
     "code": ""
