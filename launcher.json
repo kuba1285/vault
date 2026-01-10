@@ -44,7 +44,7 @@
     "name": "github_rawify"
   },
   "ic": {
-    "code": "javascript:function JSexe(){if(valJS!='null' && valJS!='undefined')strJS=valJS;strJS=prompt('Your Javascript code or variable:',strJS);if(strJS!=null && strJS!='' && strJS!='undefined'){setTimeout('valJS=\\'\\'+eval(strJS);JSexe()',10);}else{valJS='';strJS='';}}valJS='';strJS='';JSexe();void(0);",
+    "code": "javascript:(function(){\n  let valJS = '';\n  let strJS = '';\n  const JSexe = () => {\n    if(valJS !== 'null' && valJS !== 'undefined') strJS = valJS;\n    strJS = prompt('Your Javascript code or variable:', strJS);\n    if(strJS !== null && strJS !== '' && strJS !== 'undefined'){\n      try {\n        /* evalの結果を変数に格納し、自分自身を再度呼び出す */\n        valJS = '' + eval(strJS);\n        setTimeout(JSexe, 10);\n      } catch(e) {\n        alert('実行エラー: ' + e.message);\n        valJS = '';\n        strJS = '';\n      }\n    } else {\n      valJS = '';\n      strJS = '';\n    }\n  };\n  JSexe();\n})();"
     "name": "inject_code"
   },
   "mi": {
