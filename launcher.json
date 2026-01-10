@@ -1,0 +1,10 @@
+{
+  "g": {
+    "name": "Google検索",
+    "code": "(function(){const q=window.getSelection().toString()||prompt('検索:');if(q)window.open('https://www.google.com/search?q='+encodeURIComponent(q))})();"
+  },
+  "c": {
+    "name": "カラーピッカー",
+    "code": "(function(){const c=prompt('Color:','#000000');if(c)document.body.style.backgroundColor=c})();"
+  }
+}
