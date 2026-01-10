@@ -5,6 +5,5 @@
   },
   "m": {
     "name": "map_image",
-    "code": "javascript:(()%3D>%7Bplace%3Dprompt('Location to view%3A'%2C'')%3Bzoom%3Dprompt('Zoom level(1-20%2Cdefault%3D15)%3A'%2C'15')%3Bif(place !%3Dnull %26%26 place !%3D'undefined')%7Bwindow.open('https%3A%2F%2Fexternal-content.duckduckgo.com%2Fssv2%2F%3Fscale%3D2%26lang%3Dja%26colorScheme%3Dlight%26format%3Dpng%26size%3D640x640%26z%3D' %2B(zoom %7C%7C '15')%2B '%26center%3D' %2B encodeURIComponent(place)%2C'_blank'%2C'noreferrer')%7D%7D)()%3Bvoid(0);"
-  }
+    "code": "javascript:(()=>{place=prompt('Location to view:','');zoom=prompt('Zoom level(1-20,default=15):','15');if(place !=null && place !='undefined'){window.open('https://external-content.duckduckgo.com/ssv2/?scale=2&lang=ja&colorScheme=light&format=png&size=640x640&z=' +(zoom || '15')+ '&center=' + encodeURIComponent(place),'_blank','noreferrer')}})();void(0);"  }
 }
