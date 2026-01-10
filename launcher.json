@@ -5,7 +5,7 @@
   },
   "d": {
     "name": "docu_finder",
-    "code": "script/docu_finder.js"
+    "code": "../script/docu_finder.js"
   },
   "s": {
     "name": "select_table_column",
