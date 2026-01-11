@@ -98,9 +98,5 @@
   "wi": {
     "code": "javascript:(({quality, fileName, format}) => {\n \n  let img = document.getElementsByTagName('img')[0];\n  let make = (t, p) => Object.assign(document.createElement(t), p);\n  let cv = make('canvas', { width: img.naturalWidth, height: img.naturalHeight });\n  cv.getContext('2d').drawImage(img, 0, 0);\n  cv.toBlob(b => make('a', { href: URL.createObjectURL(b), download: fileName }).click(), 'image/' + format, quality - 0);\n \n})({quality:0.92, fileName:'tempoName', format:{0:'png', 1:'jpeg', 2:'webp'}[1]});",
     "name": "webp_to_jpg"
-  },
-  "wv": {
-    "code": "javascript:(function(){navigator.clipboard.readText().then(no=>{function urlGen(n,t){let i=new Date;i.setTime(t * 1e5);let r=i.getFullYear(),u=i.getMonth()+ 1,f=i.getDate();return \"https://rescdn.dokidokilive.com/doki/record_m3u8/\" + r + \"/\" + u + \"/\" + f + \"/\" + n + \"/\" + n + \".m3u8\"}let t=no;let i=t.substring(2),n=urlGen(t,i),f=Number(i)- 324,r=urlGen(t,f),e=Number(i)+ 324,u=urlGen(t,e);switch(true){case /NWT[\\d]{10}/.test(no): window.open(r,);window.open(n,);window.open(u,);break;default: alert('must be 10 degit.');break;}});})();",
-    "name": "webcam_viewer"
   }
 }
