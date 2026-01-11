@@ -36,7 +36,7 @@
     "name": "editorlet"
   },
   "fg": {
-    "code": "javascript:(function(){var links=[];var elements=document.querySelectorAll('div > span > a');for(var i=0;i < elements.length;i++){links.push(elements[i].href);}var result=links.join('\\n');navigator.clipboard.writeText(result);if(confirm('クリップボードにコピーしました(' + links.length + '件)\\n\\nすべてのリンクを新しいタブで開きますか?')){links.forEach(function(url){window.open(url,'_blank');});}})();void(0);",
+    "code": "javascript:(function(){\n    var links = [];\n    var elements = document.querySelectorAll('div > span > a');\n    for(var i = 0; i < elements.length; i++){\n        links.push(elements[i].href);\n    }\n    var result = links.join('\\n');\n    navigator.clipboard.writeText(result);\n    \n    if(!confirm('クリップボードにコピーしました(' + links.length + '件)\\n\\n一括リンク展開を中止しますか?')){\n        links.forEach(function(url){\n            window.open(url, '_blank');\n        });\n    }\n})();void(0);",
     "name": "fetch_google_results"
   },
   "fi": {
